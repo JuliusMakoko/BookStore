@@ -1,6 +1,8 @@
 /**
  * Created by nn on 10/11/2015.
  */
+import java.util.*;
+
 public class Provider {
 
     private String id;
@@ -9,7 +11,10 @@ public class Provider {
     private Double phoneNumber;
     private String eMail;
 
+    private ArrayList<WrittenWork> products = new ArrayList<>();
 
+
+    
 
 
 
