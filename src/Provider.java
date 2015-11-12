@@ -5,30 +5,38 @@ import java.util.*;
 
 public class Provider extends Customer{
 
+    private float rating;
     private int experienceYears;
 
     private ArrayList<WrittenWork> products = new ArrayList<>();
 
 
-    public Provider (String id,String name, String address, String birthDate, Double phoneNumber, String eMail,int experienceYears)
+    public Provider (String id,String name, String address, String birthDate, Double phoneNumber, String eMail,int experienceYears,float rating)
     {
-       this.experienceYears=experienceYears;
+       this.rating =0;
+       this.experienceYears=0;
     }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+
+    public int getExperienceYears() {
+        return experienceYears;
+    }
+
+    public void setExperienceYears(int experienceYears) {
+        this.experienceYears = experienceYears;
+    }
+
     public String toString() {
         return getName();
-    }
-/*
-    public String getId() { return id; }
-    public void setId(String myId) {this.id=myId; }
+    }// to string
 
-    public String getName () {return name;}
-    public void setName (String myName) {this.name=myName;}
-
-    public Double getPhoneNumber () {return phoneNumber;}
-    public void setPhoneNumber (Double myPhoneNumber) {this.phoneNumber=myPhoneNumber;}
-
-    public String geteMail () {return eMail;}
-    public void seteMail (String myeMail) {this.eMail=myeMail; }*/
 
 
 
