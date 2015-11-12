@@ -3,21 +3,21 @@
  */
 import java.util.*;
 
-public class Provider {
+public class Provider extends Customer{
 
-    private String id;
-    private String name;
-   // private String address;
-    private Double phoneNumber;
-    private String eMail;
+    private int experienceYears;
 
     private ArrayList<WrittenWork> products = new ArrayList<>();
 
 
-    
-
-
-
+    public Provider (String id,String name, String address, String birthDate, Double phoneNumber, String eMail,int experienceYears)
+    {
+       this.experienceYears=experienceYears;
+    }
+    public String toString() {
+        return getName();
+    }
+/*
     public String getId() { return id; }
     public void setId(String myId) {this.id=myId; }
 
@@ -28,7 +28,7 @@ public class Provider {
     public void setPhoneNumber (Double myPhoneNumber) {this.phoneNumber=myPhoneNumber;}
 
     public String geteMail () {return eMail;}
-    public void seteMail (String myeMail) {this.eMail=myeMail; }
+    public void seteMail (String myeMail) {this.eMail=myeMail; }*/
 
 
 
