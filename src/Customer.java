@@ -5,7 +5,7 @@ public class Customer {
     private String id;
     private String name;
     private String address;
-    private String birthDate; // age
+    private String birthDate;
     private Double phoneNumber;
     private String eMail;
     private Boolean isSubscription;
@@ -14,7 +14,6 @@ public class Customer {
     {
        this.isSubscription=false;
     }
-
 
 
     public String getId() { return id; }
