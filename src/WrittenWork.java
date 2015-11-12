@@ -28,4 +28,8 @@ public abstract class WrittenWork {
             seller.addProduct(this);
         }
     }
+
+    public double getPrice() {
+        return price;
+    }
 }

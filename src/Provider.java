@@ -5,19 +5,41 @@ import java.util.*;
 
 public class Provider extends Customer{
 
-    private float rating;
+    private double rating;
     private int experienceYears;
 
     private ArrayList<WrittenWork> products = new ArrayList<>();
 
-
-    public Provider (String id,String name, String address, String birthDate, Double phoneNumber, String eMail,int experienceYears,float rating)
-    {
-       this.rating =0;
-       this.experienceYears=0;
+    /**
+     * Default constructor
+     */
+    public Provider() {
+        super();
+        rating = 0.0;
+        experienceYears = 0;
     }
 
-    public float getRating() {
+    /**
+     * Constructor
+     * @param id must be 9 digits long
+     * @param name customer's name
+     * @param address customer's address
+     * @param birthDate customer's address to gather age
+     * @param phoneNumber customer's phone number
+     * @param email customer's email
+     * @param subscriptions customer's list of subscriptions to periodicals
+     * @param gender customer's gender
+     * @param experienceYears Seller's years of experience
+     * @param rating user ratings
+     */
+    public Provider(String id, String name, String address, Date birthDate, String phoneNumber, String email, ArrayList<Periodical> subscriptions, Gender gender, int experienceYears,float rating)
+    {
+        super(id, name, address, birthDate, phoneNumber, email, subscriptions, gender);
+        this.rating = rating;
+        this.experienceYears = experienceYears;
+    }
+
+    public double getRating() {
         return rating;
     }
 
@@ -33,10 +55,14 @@ public class Provider extends Customer{
         this.experienceYears = experienceYears;
     }
 
+    @Override
     public String toString() {
         return getName();
-    }// to string
+    }
 
+    public void addProduct(WrittenWork product) {
+        products.add(product);
+    }
 
 
 
