@@ -1,6 +1,4 @@
-/**
- * Created by Rotem on 12/11/2015.
- */
+
 
 import java.util.*;
 

@@ -1,6 +1,4 @@
-/**
- * Created by Rotem on 10/11/2015.
- *
+/*
  * A class which dictates the basic fields
  * every product which is sold in our store, should hold
  */
@@ -27,5 +25,9 @@ public abstract class WrittenWork {
         for (Provider seller : sellers) {
             seller.addProduct(this);
         }
+    }
+
+    public double getPrice() {
+        return price;
     }
 }

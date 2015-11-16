@@ -1,6 +1,5 @@
-/**
- * Created by Rotem on 12/11/2015.
- *
+/*
+
  * Depicts all the possible categories for written works
  */
 public enum Genre {

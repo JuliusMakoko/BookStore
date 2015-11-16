@@ -1,38 +1,100 @@
-/**
- * Created by nn on 10/11/2015.
- */
-public class Customer {
-    private String id;
-    private String name;
-    private String address;
-    private String birthDate;
-    private Double phoneNumber;
-    private String eMail;
-    private Boolean isSubscription;
 
-    public  Customer()
-    {
-       this.isSubscription=false;
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Customer {
+
+    protected String id;
+    protected String name;
+    protected String address;
+    protected Date birthDate; // age
+    protected String phoneNumber;
+    protected String email;
+    protected ArrayList<Periodical> subscriptions = new ArrayList<>();
+    protected Gender gender;
+    protected ShoppingCart shoppingCart;
+
+    /**
+     * Default constructor
+     */
+    public Customer() {
+        id = "000000000";
+        name = null;
+        address = null;
+        birthDate = new Date();
+        phoneNumber = null;
+        email = null;
+        gender = Gender.MALE;
+        shoppingCart = new ShoppingCart(this);
+    }
+
+    /**
+     * Constructor
+     * @param id must be 9 digits long
+     * @param name customer's name
+     * @param address customer's address
+     * @param birthDate customer's address to gather age
+     * @param phoneNumber customer's phone number
+     * @param email customer's email
+     * @param subscriptions customer's list of subscriptions to periodicals
+     * @param gender customer's gender
+     */
+    public Customer(String id, String name, String address, Date birthDate, String phoneNumber, String email, ArrayList<Periodical> subscriptions, Gender gender) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.birthDate = birthDate;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.subscriptions = subscriptions;
+        this.gender = gender;
+        shoppingCart = new ShoppingCart(this);
     }
 
 
-    public String getId() { return id; }
-    public void setId(String myId) {this.id=myId; }
 
-    public String getName () {return name;}
-    public void setName (String myName) {this.name=myName;}
+    /*Setters and Getters*/
+    public String getId() {
+        return id;
+    }
+    public void setId(String myId) {
+        this.id = myId;
+    }
 
-    public String getAddress () {return address;}
-    public void setAddress (String myAddress) {this.address=myAddress;}
+    public String getName () {
+        return name;
+    }
+    public void setName(String myName) {
+        this.name = myName;
+    }
 
-    public String getBirthDate () {return birthDate;}
-    public void setBirthDate (String myBirthDate) {this.birthDate=myBirthDate;}
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String myAddress) {
+        this.address = myAddress;
+    }
 
-    public Double getPhoneNumber () {return phoneNumber;}
-    public void setPhoneNumber (Double myPhoneNumber) {this.phoneNumber=myPhoneNumber;}
+    public Date getBirthDate () {
+        return birthDate;
+    }
+    public void setBirthDate (Date myBirthDate) {
+        this.birthDate = myBirthDate;
+    }
 
-    public String geteMail () {return eMail;}
-    public void seteMail (String myeMail) {this.eMail=myeMail; }
+    public String getPhoneNumber () {
+        return phoneNumber;
+    }
+    public void setPhoneNumber (String myPhoneNumber) {
+        this.phoneNumber = myPhoneNumber;
+    }
+
+    public String getEmail () {
+        return email;
+    }
+    public void setEmail (String myEmail) {
+        this.email = myEmail;
+    }
 
 
 }

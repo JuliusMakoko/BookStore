@@ -1,6 +1,4 @@
-/**
- * Created by Rotem on 12/11/2015.
- */
+
 public class StandAlone extends Book {
 
     public StandAlone(String author, int pubYear, int edition, String title, double price, String description, Genre genre) {

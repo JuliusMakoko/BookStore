@@ -1,6 +1,4 @@
-/**
- * Created by Rotem on 12/11/2015.
- */
+
 public abstract class Book extends WrittenWork {
 
     protected String author;
