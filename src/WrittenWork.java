@@ -8,6 +8,12 @@ import java.util.*;
 
 public abstract class WrittenWork {
 
+    /**
+     * A unique identifier for every written work.
+     * Six numbers and/or letters.
+     */
+    protected String id;
+
     protected String title;
 
     protected double price;
@@ -18,7 +24,7 @@ public abstract class WrittenWork {
 
     protected Genre genre;
 
-    protected WrittenWork(String title, double price, String description, Genre genre, ArrayList<Provider> sellers) {
+    protected WrittenWork(String id, String title, double price, String description, Genre genre, ArrayList<Provider> sellers) {
         this.title = title;
         this.price = price;
         this.description = description;
@@ -31,5 +37,35 @@ public abstract class WrittenWork {
 
     public double getPrice() {
         return price;
+    }
+
+    /**
+     * Removes a specified seller from the written work's seller list.
+     * Also removes the product from the seller's product list.
+     * @param toRemove The seller to remove
+     * @return true if the seller was found and removed, false otherwise.
+     */
+    public boolean removeSeller(Provider toRemove) {
+        for (Provider seller : sellers) {
+            if (seller.getId().equals(toRemove.getId())) {
+                toRemove.removeProduct(this.id);
+                return sellers.remove(seller);
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Adds a new seller to the written work's seller list.
+     * Only if the seller doesn't already exist in the sellers list.
+     * @param toAdd The new seller to add.
+     * @return True if the new seller was added, false otherwise.
+     */
+    public boolean addSeller(Provider toAdd) {
+        if (!sellers.contains(toAdd)) {
+            toAdd.addProduct(this);
+            return sellers.add(toAdd);
+        }
+        return false;
     }
 }
