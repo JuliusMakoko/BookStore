@@ -64,6 +64,9 @@ public class Provider extends Customer {
         products.add(product);
     }
 
+    public void removeProduct(String productId) {
+
+    }
 
 
 
